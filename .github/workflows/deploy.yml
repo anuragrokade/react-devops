@@ -31,3 +31,4 @@ jobs:
           publish_dir: ./dist
           user_name: anuragrokade
           user_email: anuragrokade1@gmail.com
+          allow_empty_commit: true
