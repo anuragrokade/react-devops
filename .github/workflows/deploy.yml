@@ -28,6 +28,4 @@ jobs:
         run: |
           git config --global user.name 'anuragrokade'
           git config --global user.email 'anuragrokade1@gmail.com'
-          npx gh-pages -d dist
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          npx gh-pages -d dist -u "anuragrokade <anuragrokade1@gmail.com>" -r https://anuragrokade:${{ secrets.GITHUB_TOKEN }}@github.com/anuragrokade/react-devops.git
