@@ -29,3 +29,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          user_name: anuragrokade
+          user_email: anuragrokade1@gmail.com
