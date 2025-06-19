@@ -1,4 +1,4 @@
-name: Deploy React App to GitHub Pages
+name: Deploy React + Vite to GitHub Pages
 
 on:
   push:
@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -25,10 +25,9 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          user_name: anuragrokade
-          user_email: anuragrokade1@gmail.com
-          allow_empty_commit: true
+        run: |
+          git config --global user.name 'anuragrokade'
+          git config --global user.email 'anuragrokade1@gmail.com'
+          npx gh-pages -d dist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
